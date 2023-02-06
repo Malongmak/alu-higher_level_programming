@@ -1,3 +1,10 @@
 #!/usr/bin/python3
-def uppercase(string):
-    print("".join([chr(ord(c) -32) if ord(c) >= 97 and ord(c) <= 122 else c for c in string]), end="\n")
+def uppercase(str):
+    for c in str:
+        isupper = ord(c) >= ord('a') and ord(c) <= ord('z')
+        if isupper:
+            # difference between 'a' and 'A'
+            diff = ord('A') - ord('a')
+            c = chr(ord(c) + diff)
+        print("{}".format(c), end='')
+    print()
