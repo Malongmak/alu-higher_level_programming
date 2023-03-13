@@ -1,29 +1,21 @@
 #!/usr/bin/python3
 import sys
 
-def is_valid(board, row, col, n):
-    for i in range(n):
-        if board[row][i] == 1 or board[i][col] == 1:
-            return False
-        if row+i < n and col+i < n and board[row+i][col+i] == 1:
-            return False
-        if row-i >= 0 and col-i >= 0 and board[row-i][col-i] == 1:
-            return False
-        if row-i >= 0 and col+i < n and board[row-i][col+i] == 1:
-            return False
-        if row+i < n and col-i >= 0 and board[row+i][col-i] == 1:
+def is_valid(board, row, col):
+    for r, c in board:
+        if c == col or r + c == row + col or r - c == row - col:
             return False
     return True
 
-def nqueens_helper(board, col, n, solutions):
-    if col == n:
+def nqueens_helper(n, row, board, solutions):
+    if row == n:
         solutions.append(board.copy())
-        return
-    for row in range(n):
-        if is_valid(board, row, col, n):
-            board[row][col] = 1
-            nqueens_helper(board, col+1, n, solutions)
-            board[row][col] = 0
+    else:
+        for col in range(n):
+            if is_valid(board, row, col):
+                board.append((row, col))
+                nqueens_helper(n, row + 1, board, solutions)
+                board.pop()
 
 def nqueens(n):
     if not isinstance(n, int):
@@ -32,9 +24,8 @@ def nqueens(n):
     if n < 4:
         print("N must be at least 4")
         sys.exit(1)
-    board = [[0 for i in range(n)] for j in range(n)]
     solutions = []
-    nqueens_helper(board, 0, n, solutions)
+    nqueens_helper(n, 0, [], solutions)
     for solution in solutions:
         print(solution)
 
@@ -48,4 +39,3 @@ if __name__ == "__main__":
     except ValueError:
         print("N must be a number")
         sys.exit(1)
-
