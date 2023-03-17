@@ -42,4 +42,3 @@ if _name_ == "_main_":
     except ValueError:
         print("N must be a number")
         sys.exit(1)
-
