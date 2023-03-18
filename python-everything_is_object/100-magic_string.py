@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def magic_string():
-    magic_string.count = getattr(magic_string, 'count', -1) + 1
-    return "BestSchool" + ", BestSchool" * magic_string.count
+magic_string = __import__('100-magic_string').magic_string
 
+for i in range(10):
+    print(magic_string())
