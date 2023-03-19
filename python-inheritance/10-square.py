@@ -29,4 +29,9 @@ class Square(Rectangle):
         Returns a string representation of the Square instance.
         """
         return "[Square] {}/{}".format(self.__size, self.__size)
+"""
+This module implements file checking functionality.
+"""
 
+with open("file.txt") as f:
+    print("File is present")
