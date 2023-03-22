@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Inherits BaseGeometry class"""
+"""Are you documented ?"""
 
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
