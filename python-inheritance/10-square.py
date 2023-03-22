@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Are you documented ?"""
 """Inherits BaseGeometry class"""
 
 
