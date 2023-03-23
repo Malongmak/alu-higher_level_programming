@@ -25,6 +25,5 @@
 
 >>> new_list.print_sorted()
 [-1, 2, 4]
-
 >>> new_list
 [4, 2, -1]
