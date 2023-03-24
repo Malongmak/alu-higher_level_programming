@@ -1,4 +1,4 @@
->>> MyList = _import_('1-my_list').MyList
+>>> MyList = __import__('1-my_list').MyList
 
 >>> new_list = MyList()
 
@@ -27,4 +27,4 @@
 [-1, 2, 4]
 
 >>> new_list
-[4, 2, -1]
+[4, 2, -1]
