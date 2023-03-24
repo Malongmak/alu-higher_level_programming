@@ -12,6 +12,7 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """Initializer for Rectangle class"""
 
+
         self.__width = 0
         self.__height = 0
         super().__init__()
