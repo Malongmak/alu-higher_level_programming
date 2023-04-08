@@ -16,4 +16,3 @@ if __name__ == '__main__':
     states = cur.fetchall()
 
     print(", ".join([state[1] for state in states]))
-
