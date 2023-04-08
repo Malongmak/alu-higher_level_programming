@@ -1,8 +1,7 @@
 python3 -m unittest discover tests
 import unittest
-
-
 from my_module import add_numbers
+
 
 class TestAddNumbers(unittest.TestCase):
     
