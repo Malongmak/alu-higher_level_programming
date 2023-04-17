@@ -1,7 +1,16 @@
-python3 -m unittest discover tests
-...................................................................................
-...................................................................................
-.......................
-----------------------------------------------------------------------
-ok
+import unittest
+from your_module import your_function
+
+class TestYourFunction(unittest.TestCase):
+    def test_output(self):
+        self.assertEqual(your_function(2), 4)
+        self.assertEqual(your_function(3), 9)
+        self.assertEqual(your_function(4), 16)
+
+    def test_input(self):
+        with self.assertRaises(TypeError):
+            your_function('string')
+
+if __name__ == '__main__':
+    unittest.main()
 
