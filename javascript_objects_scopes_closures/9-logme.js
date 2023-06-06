@@ -1,7 +1,5 @@
 #!/usr/bin/node
-let callCount = 0;
 
-exports.logMe = function (item) {
-  console.log(`${callCount}: ${item}`);
-  callCount += 1;
+exports.converter = function (base) {
+  return (number = 0) => number.toString(base);
 };
