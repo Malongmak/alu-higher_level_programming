@@ -52,4 +52,3 @@ function printCharacters(movieId) {
 
 const movieId = process.argv[2];
 printCharacters(movieId);
-
